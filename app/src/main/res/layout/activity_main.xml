@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity"
+    android:background="@color/splash"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:nextFocusRight="@+id/fab" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/connection_test_height"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:nextFocusRight="@+id/fab"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:nextFocusLeft="@+id/recycler_view">
+
+                        <TextView
+                            android:id="@+id/tv_test_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:minLines="1"
+                            android:paddingStart="16dp"
+                            android:text="@string/connection_test_pending"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.github.jorgecastilloprz.FABProgressCircle
+                    android:id="@+id/fabLRefresh"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginBottom="48dp">
+
+                    <ImageView
+                        android:id="@+id/fabRefresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/iconsrefresh"
+                        />
+
+                </com.github.jorgecastilloprz.FABProgressCircle>
+
+                <com.github.jorgecastilloprz.FABProgressCircle
+                    android:id="@+id/fabProgressCircle"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="bottom|right"
+                    >
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/fab"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|right"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:nextFocusLeft="@+id/layout_test"
+                        app:layout_anchor="@+id/fabProgressCircle"
+                        app:layout_anchorGravity="right"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/rocketfab" />
+                </com.github.jorgecastilloprz.FABProgressCircle>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+<!--    menu -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_drawer"
+        >
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:padding="2dp">
+
+            <TextView
+                    android:id="@+id/version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
