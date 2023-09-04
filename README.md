@@ -3,7 +3,7 @@
 
 از این پروژه بک اند رو راه بندازید
 
-https://github.com/hossein75rn/vpn
+https://github.com/hossein75rn/vpnconfig
 
 از اینجا نسخه بدون نیاز به کامپایل رو داشته باشید
 
