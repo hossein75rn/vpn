@@ -7,7 +7,7 @@ https://github.com/hossein75rn/vpn
 
 از اینجا نسخه بدون نیاز به کامپایل رو داشته باشید
 
-https://github.com/hossein75rn/vpnfc
+
 
 هست v2rayng این برنامه اندرویدی از سورس کد
 :-
