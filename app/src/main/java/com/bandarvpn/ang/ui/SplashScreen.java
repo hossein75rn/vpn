@@ -26,8 +26,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                SplashScreen.this.finish();
-                startActivity(new Intent(SplashScreen.this,LoginActivity.class));
+                startLoginActivity();
             }
 
             @Override
@@ -41,6 +40,18 @@ public class SplashScreen extends AppCompatActivity {
             }
         });
     }
+
+    private void startLoginActivity() {
+        SplashScreen.this.finish();
+        startActivity(new Intent(SplashScreen.this,LoginActivity.class));
+    }
+
+    @Override
+    protected void onResume() {
+        startLoginActivity();
+        super.onResume();
+    }
+
     private void init(){
         rocket = findViewById(R.id.lottie_rocket);
     }
